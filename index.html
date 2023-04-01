@@ -1,0 +1,69 @@
+<html lang="en">
+
+<head>
+    <title>Eaglercraft</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <style>
+        @import url("https://fonts.googleapis.com/css?family=Raleway:400,700,700i");
+        @import url("https://cdn.jsdelivr.net/gh/ROMVoid95/DiscordFonts@master/fontface.css");
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: "Raleway", sans-serif;
+            background: linear-gradient(0deg,
+                    rgba(38, 0, 255, 0.5),
+                    rgba(113, 201, 252, 0.3)),
+                url("https://digitalserpant.github.io/Pics/Screenshot%202023-03-25%20115412.png");
+            background-attachment: fixed;
+            background-position: center;
+            background-color: rgba(200, 139, 58, 0.5);
+        }
+
+        .form-control {
+            background-color: black;
+            color: white;
+        }
+
+        .btn {
+            background-color: rgb(255, 165, 91);
+        }
+
+        .btn:hover {
+            background-color: rgb(139, 68, 10);
+        }
+
+        .middle {
+            display: inline-block;
+            position: absolute;
+            top: 66%;
+            left: 50%;
+            transform: translate(-50%, -50%)
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="filler" style="visibility: visible;">
+        <div class="middle">
+            <div class="form-group">
+                <h2 style="color:white;">Select version:</h2>
+                <select class="form-control" style="width:unset;display:inline;" id="dropDown">
+                    <option value="https://imadejptr.github.io/strg/eaglercraft/1.5.2/index.html"selected>Eaglercraft 1.5.2</option>                                                                                                  
+                    <option value="https://imadejptr.github.io/strg/eaglercraft/1.8.8/index.html">EaglercraftX 1.8.8(Beta)</option>
+                </select><button class="btn btn-primary" style="margin-top:-4px;margin-left:4px;" id="start"
+                    onclick="loadGame();">Start</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/load.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+</body>
+
+</html>
