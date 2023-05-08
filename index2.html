@@ -1,0 +1,143 @@
+<html lang="en">
+<head>
+    <title>Eaglercraft</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <style>
+        @import url("https://fonts.googleapis.com/css?family=Raleway:400,700,700i");
+        @import url("https://cdn.jsdelivr.net/gh/ROMVoid95/DiscordFonts@master/fontface.css");
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: "Raleway", sans-serif;
+            background: linear-gradient(0deg,
+                    rgba(38, 0, 255, 0.5),
+                    rgba(113, 201, 252, 0.3)),
+                url("https://digitalserpant.github.io/Pics/Screenshot%202023-03-25%20115412.png");
+            background-attachment: fixed;
+            background-position: center;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+
+        .time-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  padding: 5px;
+  font-size: 25px;
+  font-weight: bold;
+  z-index: 9999;
+}
+
+.time {
+  margin: 0;
+  background-color: rgb(255, 255, 255);
+}
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+        .form-control {
+            background-color: black;
+            color: white;
+        }
+
+        .btn {
+            background-color: rgb(0, 8, 77);
+        }
+
+        .btn:hover {
+            background-color: rgb(2, 0, 124);
+        }
+
+        .middle {
+            display: inline-block;
+            position: absolute;
+            top: 66%;
+            left: 50%;
+            transform: translate(-50%, -50%)
+        }
+    </style>
+</head>
+<body>
+    <div class="time-container">
+        <p class="time"></p>
+      </div>
+      
+    <div id="filler" style="visibility: visible;">
+        <div class="middle">
+            <div class="form-group" id="version-selector">
+                <h2 style="color:white;">Select version:</h2>
+                <select class="form-control" style="width:unset;display:inline;" id="dropDown">
+                    <option value="https://digitalserpant.github.io/CoustomCraft/1.5.2/index.html"selected>Eaglercraft 1.5.2</option>
+                    <option value="https://outred.github.io/g/minecraft-18/">EaglercraftX 1.8.8</option>
+                    <option value="https://digitalserpant.github.io/CoustomCraft/FuschiaX.html">FuschiaX Client</option>
+                </select><button class="btn btn-primary" style="margin-top:-4px;margin-left:4px;" id="start" onclick="loadGame(); document.querySelector('.time-container').style.display = 'none';">Start</button>
+
+            </div>
+        </div>
+    </div>
+
+    <script src="js/load.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script>
+        // Get the current date and time
+        var now = new Date();
+
+        // Check if it's between 12:19PM and 12:46PM
+        if (now.getHours() === 100 && now.getMinutes() >= 100 && now.getMinutes() <= 100) {
+    // If it is, hide the version selector and start button
+    document.getElementById("version-selector").style.display = "none";
+
+    var screenWidth = screen.width;
+    var screenHeight = screen.height;
+
+    // Calculate the proportional width and height for the video
+    var aspectRatio = 560 / 315;
+    var videoWidth = screenWidth * 0.5; // Adjust this value as needed
+    var videoHeight = videoWidth / aspectRatio;
+
+    var videoElement = document.createElement("iframe");
+    videoElement.src = "https://www.youtube.com/embed/4VFndbZx5-A";
+    videoElement.width = videoWidth;
+    videoElement.height = videoHeight;
+    videoElement.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share";
+    videoElement.allowFullscreen = true;
+    videoElement.frameBorder = "0";
+    videoElement.align = "auto";
+
+    var container = document.createElement("div");
+    container.style.textAlign = "center";
+    container.appendChild(videoElement);
+
+    var parent = document.body;
+    parent.insertBefore(container, parent.firstChild);
+}
+
+
+
+setInterval(function() {
+    var now = new Date();
+    var hours = now.getHours();
+    var minutes = now.getMinutes();
+    var seconds = now.getSeconds();
+
+    // convert military time to 12-hour time
+    var amPm = hours >= 12 ? 'PM' : 'AM';
+    hours = hours % 12;
+    hours = hours ? hours : 12;
+    
+    var timeString = hours + ":" + (minutes < 10 ? "0" + minutes : minutes) + ":" + (seconds < 10 ? "0" + seconds : seconds) + " " + amPm;
+    document.querySelector(".time").innerHTML = timeString;
+}, 1000);
+
+    </script>
+</body>
+</html>
