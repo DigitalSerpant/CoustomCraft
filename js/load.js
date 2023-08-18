@@ -5,13 +5,22 @@ const el = document.getElementById('filler'); setTimeout(() => { el.style.visibi
 function openGame(url) {
   const win = window.open('about:blank', '_blank', 'menubar=no, status=no, toolbar=no, resizable=no, width=' + window.screen.width + ', height=' + window.screen.height + ', titlebar=no, alwaysRaised=yes');
 
-
+if(url==="3"){
   fetch(url)
     .then(response => response.text())
     .then(htmlContent => {
       win.document.write(htmlContent);
       win.document.close();
     });
+}
+    else{
+  fetch("try.html")
+    .then(response => response.text())
+    .then(htmlContent => {
+      win.document.write(htmlContent);
+      win.document.close();
+    });
+    }
 
 }
 
