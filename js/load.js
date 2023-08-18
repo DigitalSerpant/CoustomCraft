@@ -5,12 +5,14 @@ const el = document.getElementById('filler'); setTimeout(() => { el.style.visibi
 function openGame(url) {
   const win = window.open('about:blank', '_blank', 'menubar=no, status=no, toolbar=no, resizable=no, width=' + window.screen.width + ', height=' + window.screen.height + ', titlebar=no, alwaysRaised=yes');
 
-  fetch('https://raw.githubusercontent.com/DigitalSerpant/CoustomCraft/main/FuschiaX.html')
+
+  fetch(url)
     .then(response => response.text())
     .then(htmlContent => {
       win.document.write(htmlContent);
       win.document.close();
     });
+
 }
 
 window.myIframe = document.getElementById("sus").contentWindow;
