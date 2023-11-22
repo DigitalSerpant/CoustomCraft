@@ -51,6 +51,7 @@
 .*arvin.*\.repl\.co$
 .*lolz.*
 .*zach.*\.repl\.co$
+.*domegas-eaglercrack--depressed4life*\.repl.co$
 
 # block ambiguous domains (excuse the regex skill issues)
 ^(?!g\.deev\.is).*deev\.is$
