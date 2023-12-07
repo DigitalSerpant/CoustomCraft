@@ -11,7 +11,6 @@ function loadGame() {
             .then(htmlContent => {
                 // Set chrome property to undefined in the opened window
                 win.chrome = undefined;
-                faviconLink.href = 'https://asset-cdn.schoology.com/sites/all/themes/schoology_theme/favicon.ico';
                 win.document.write(htmlContent);
                 win.document.close();
             });
